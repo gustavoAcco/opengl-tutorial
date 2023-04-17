@@ -19,7 +19,7 @@ set( ${PROJECT_NAME}-SRC
      main.cpp
      )
      
- add_executable( ${PROJECT_NAME} WIN32 ${${PROJECT_NAME}-SRC} )
+add_executable( ${PROJECT_NAME} WIN32 ${${PROJECT_NAME}-SRC} )
 target_link_libraries( ${PROJECT_NAME} ${OPENGL_LIBRARIES} glfw GLEW )
 if( MSVC )
     if(${CMAKE_VERSION} VERSION_LESS "3.6.0") 
