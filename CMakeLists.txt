@@ -17,6 +17,9 @@ endif()
 
 set( ${PROJECT_NAME}-SRC
      main.cpp
+     Renderer.cpp
+     IndexBuffer.cpp
+     VertexBuffer.cpp
      )
      
 add_executable( ${PROJECT_NAME} WIN32 ${${PROJECT_NAME}-SRC} )
