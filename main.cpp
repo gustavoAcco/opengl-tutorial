@@ -4,9 +4,9 @@
 #include "Renderer.h"
 
 #include "VertexBuffer.h"
+#include "VertexBufferLayout.h"
 #include "IndexBuffer.h"
 #include "VertexArray.h"
-#include "VertexBufferLayout.h"
 #include "Shader.h"
 
 int main(void)
@@ -53,12 +53,10 @@ int main(void)
             2, 3, 0
         };
 
-        unsigned int vao;
-       
         VertexArray va;
         VertexBuffer vb(positions, 4 * 2 * sizeof(float));
-        VertexBufferLayout layout;
 
+        VertexBufferLayout layout;
         layout.Push<float>(2);
         va.AddBuffer(vb, layout);
 
@@ -66,28 +64,27 @@ int main(void)
         
         Shader shader("../basic.shader");
         shader.Bind();
-        shader.SetUniform4f("u_Color", 0.2f, 0.3f, 0.8f, 1.0f);
+        shader.SetUniform4f("u_Color", 0.8f, 0.3f, 0.8f, 1.0f);
 
         va.Unbind();
         vb.Unbind();
         ib.Unbind();
         shader.Unbind();
         
+        Renderer renderer;
+
         float r = 0.0f;
         float increment = 0.05f;
         /* Loop until the user closes the window */
         while (!glfwWindowShouldClose(window))
         {
             /* Render here */
-            GLCall(glClear(GL_COLOR_BUFFER_BIT));
+            renderer.Clear(); 
 
             shader.Bind();
             shader.SetUniform4f("u_Color", r, 0.3f, 0.8f, 1.0f);
-            
-            va.Bind();
-            ib.Bind();
 
-            GLCall(glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr));
+            renderer.Draw(va, ib, shader);
 
             if (r > 1.0f)
                 increment = -0.05f;
@@ -97,10 +94,10 @@ int main(void)
             r += increment;
 
             /* Swap front and back buffers */
-            GLCall(glfwSwapBuffers(window));
+            glfwSwapBuffers(window);
 
             /* Poll for and process events */
-            GLCall(glfwPollEvents());
+            glfwPollEvents();
         }
     }
     glfwTerminate();
