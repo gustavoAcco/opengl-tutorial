@@ -20,6 +20,7 @@ set( ${PROJECT_NAME}-SRC
      Renderer.cpp
      IndexBuffer.cpp
      VertexBuffer.cpp
+     VertexArray.cpp
      )
      
 add_executable( ${PROJECT_NAME} WIN32 ${${PROJECT_NAME}-SRC} )
