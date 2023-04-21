@@ -16,12 +16,12 @@ if( MSVC )
 endif()
 
 set( ${PROJECT_NAME}-SRC
-     main.cpp
-     Renderer.cpp
-     IndexBuffer.cpp
-     VertexBuffer.cpp
-     VertexArray.cpp
-     Shader.cpp
+     src/Application.cpp
+     src/Renderer.cpp
+     src/IndexBuffer.cpp
+     src/VertexBuffer.cpp
+     src/VertexArray.cpp
+     src/Shader.cpp
      )
      
 add_executable( ${PROJECT_NAME} WIN32 ${${PROJECT_NAME}-SRC} )
