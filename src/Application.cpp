@@ -89,6 +89,7 @@ int main(void)
         while (!glfwWindowShouldClose(window))
         {
             /* Render here */
+            glClearColor(1.0f, 1.0f, 1.0, 1.0f);
             renderer.Clear(); 
 
             shader.Bind();
