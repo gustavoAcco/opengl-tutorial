@@ -22,6 +22,8 @@ set( ${PROJECT_NAME}-SRC
      src/VertexBuffer.cpp
      src/VertexArray.cpp
      src/Shader.cpp
+     src/Texture.cpp
+     src/vendor/stb_image/stb_image.cpp
      )
      
 add_executable( ${PROJECT_NAME} WIN32 ${${PROJECT_NAME}-SRC} )
