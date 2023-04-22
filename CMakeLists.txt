@@ -34,6 +34,8 @@ set( ${PROJECT_NAME}-SRC
      src/vendor/imgui/imgui_draw.cpp
      src/vendor/imgui/imgui_tables.cpp
      src/vendor/imgui/imgui_widgets.cpp
+     src/vendor/imgui/imgui_impl_glfw.cpp
+     src/vendor/imgui/imgui_impl_opengl3.cpp
      )
      
 add_executable( ${PROJECT_NAME} WIN32 ${${PROJECT_NAME}-SRC} )
