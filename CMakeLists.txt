@@ -36,11 +36,15 @@ set( ${PROJECT_NAME}-SRC
      src/vendor/imgui/imgui_widgets.cpp
      src/vendor/imgui/imgui_impl_glfw.cpp
      src/vendor/imgui/imgui_impl_opengl3.cpp
+     src/tests/TestClearColor.cpp
      )
      
 add_executable( ${PROJECT_NAME} WIN32 ${${PROJECT_NAME}-SRC} )
 target_link_libraries( ${PROJECT_NAME} ${OPENGL_LIBRARIES} glm glfw GLEW )
 target_include_directories( ${PROJECT_NAME} PRIVATE src/vendor )
+target_include_directories( ${PROJECT_NAME} PRIVATE src/tests )
+target_include_directories( ${PROJECT_NAME} PRIVATE src )
+
 
 if( MSVC )
     if(${CMAKE_VERSION} VERSION_LESS "3.6.0") 
