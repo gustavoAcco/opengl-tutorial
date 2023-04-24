@@ -36,8 +36,9 @@ set( ${PROJECT_NAME}-SRC
      src/vendor/imgui/imgui_widgets.cpp
      src/vendor/imgui/imgui_impl_glfw.cpp
      src/vendor/imgui/imgui_impl_opengl3.cpp
-     src/tests/TestClearColor.cpp
      src/tests/Test.cpp
+     src/tests/TestClearColor.cpp
+     src/tests/TestTexture2D.cpp
      )
      
 add_executable( ${PROJECT_NAME} WIN32 ${${PROJECT_NAME}-SRC} )
