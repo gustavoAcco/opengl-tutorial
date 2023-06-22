@@ -4,6 +4,10 @@
 
 câmera estilo perspectiva
 
+    Alterar vertex e fragment para 3d
+    Aplicaar texture usando tiling em grandes quads
+    Criar novo "test" que use projeção em perspectiva
+
 ## Renderização do chão
 
 Array de quad(?)
