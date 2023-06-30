@@ -39,6 +39,7 @@ set( ${PROJECT_NAME}-SRC
      src/tests/Test.cpp
      src/tests/TestClearColor.cpp
      src/tests/TestTexture2D.cpp
+     src/tests/TestTexture3D.cpp
      )
      
 add_executable( ${PROJECT_NAME} WIN32 ${${PROJECT_NAME}-SRC} )
